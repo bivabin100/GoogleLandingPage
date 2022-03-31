@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body id="body">
+    <div class="modal hide">
+      <div class="modal_inner">
+        <h1>How you wanna be called is </h1>
+        <input type="text" placeholder="...">
+      </div>
+    </div>
+
+    <div class="right_box">
+      <div class="datetime_box noselect">
+        <div class="date">
+          <span id="dayname">uwu</span>
+          <span id="daynum">uwu</span>-
+          <span id="month">uwu</span>-
+          <span id="year">uwu</span>
+        </div>
+        <div class="time">
+          <span id="hour">uwu</span> :
+          <span id="minute">uwu</span> :
+          <span id="second">uwu</span>
+          <span id="period">uwu</span>
+        </div>
+      </div>
+      <div class="weather noselect">
+        <div class="weather_content hide">
+          <div class="weather_row">
+            <a id="temp">uwu</a><sup>o</sup>C
+          </div>
+          <div class="short_desc">uwu</div>
+          <div class="more_desc">
+            <div class="desc_item">
+              <i class="fa-solid fa-eye"></i>
+              <span><a id="visibility">uwu</a> (m)</span>
+            </div>
+            <div class="desc_item">
+              <i class="fa-solid fa-wind"></i>
+              <span><a id="wind">uwu</a> (m/s)</span>
+            </div>
+            <div class="desc_item">
+              <i class="fa-solid fa-droplet"></i>
+              <span><a id="humidity">uwu</a> (%)</span>
+            </div>
+          </div>
+          <div class="city_name">uwu</div>
+        </div>
+        <input type="text" placeholder="Input your city..." class="city_search">
+      </div>
+    </div>
+
+    <div class="google_bar">
+      <i class="fa-brands fa-google"></i>
+      <input class="google_search" placeholder="" value = "">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <div class="left_box">
+      <div class="website_shortcut">
+        <div class="website_item">
+          <a href="https://facebook.com" target="_blank"><img src="img/ws/facebook.png" alt="icon"></a>
+          <span>Facebook</span>
+        </div>
+        <div class="website_item">
+          <a href="https://google.com" target="_blank"><img src="img/ws/google.png" alt="icon"></a>
+          <span>Google</span>
+        </div>
+        <div class="website_item">
+          <a href="https://instagram.com" target="_blank"><img src="img/ws/instagram.png" alt="icon"></a>
+          <span>Instagram</span>
+        </div>
+        <div class="website_item">
+          <a href="https://youtube.com" target="_blank"><img src="img/ws/youtube.png" alt="icon"></a>
+          <span>Facebook</span>
+        </div>
+        <div class="website_item">
+          <a href="https://bit.ly/tiengruoi" target="_blank"><img src="img/ws/90p.png" alt="icon"></a>
+          <span>90M</span>
+        </div>
+        <div class="website_item">
+          <a href="https://nimo.tv" target="_blank"><img src="img/ws/nimo.png" alt="icon"></a>
+          <span>Nimo</span>
+        </div>
+        <div class="website_item">
+          <a href="https://shopee.com" target="_blank"><img src="img/ws/shopee.png" alt="icon"></a>
+          <span>Shopee</span>
+        </div>
+        <div class="website_item">
+          <a href="https://lazada.vn" target="_blank"><img src="img/ws/lazada.png" alt="icon"></a>
+          <span>Lazada</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="welcome_panel noselect">
+      <div class="uwu"></div>
+      <div class="cursor"></div>
+    </div>
+
+    <div class="right_bot_box">
+      <i class="fa-solid fa-trash"> <span>Clear User Data</span> </i>
+    </div>
+  </body>
+
+  <script src="app.js"></script>
+</html>

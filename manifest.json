@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "DefaultKiller",
+  "description": "Open New Tab with A Custom Landing Page",
+  "version": "0.1",
+  "icons": {
+    "48": "/img/xt_48.png",
+    "128": "/img/xt_128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "dashboard.html"
+  },
+  "page_action": {
+    "default_icon": {
+      "48": "/img/xt_48 (1).png",
+      "128": "/img/xt_128 (1).png"
+    }
+  }
+}
