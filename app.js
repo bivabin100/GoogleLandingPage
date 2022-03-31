@@ -20,7 +20,6 @@ window.addEventListener("load", function() {
 function userNaming() {
   var modal = document.querySelector('.modal');
   if (!localStorage.getItem("username")) {
-    console.log("chua duoc");
     modal.classList.remove('hide');
     document.querySelector('.modal_inner input').addEventListener('keypress', function(e) {
       console.log(e);
