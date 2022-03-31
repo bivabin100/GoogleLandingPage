@@ -32,7 +32,6 @@ function userNaming() {
     });
   }
   else {
-    console.log("duoc roi");
     modal.classList.add('hide');
   }
 }
@@ -75,7 +74,6 @@ function updateClock() {
   }
   else {
     document.getElementById("period").innerText = "AM";
-
   }
 }
 function initClock() {
