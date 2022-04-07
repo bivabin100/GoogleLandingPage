@@ -5,7 +5,7 @@
   box-sizing: border-box;
   //border: 1px solid red;
   font-family: 'Poppins', sans-serif;
-} 
+}
 :root {
   --color1: #10101E;
   --color2: #2E94E3;
@@ -216,8 +216,17 @@ body {
   max-width: 20rem;
   width: 100%;
   margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem;
+}
+.website_item {
+  display: grid;
+  grid-template-rows: 2rem 1rem;
+  grid-gap: 0.5rem;
+  text-align: center;
+  align-items: center;
+  position: relative;
 }
 .website_shortcut img {
   width: 2rem;
@@ -231,13 +240,11 @@ body {
 .website_shortcut img:hover {
   box-shadow: 0 0 1.5rem var(--color2);
 }
-.website_item {
-  position: relative;
-}
+
 .website_shortcut i {
   position: absolute;
-  top: -5px;
-  right: 7px;
+  top: -7px;
+  right: 5px;
   font-size: 0.8rem;
   cursor: pointer;
 }
@@ -247,13 +254,62 @@ body {
   cursor:pointer;
 }
 
-.website_item {
-  width: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0rem 1rem 0.8rem 1rem;
+.website_form {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.website_form form {
+  width: 40rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: var(--color1);
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0.8rem 1rem;
+}
+.website_form_header {
+  text-align: right;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+}
+.website_form_header i {
+  cursor: pointer;
+}
+.website_form_body .row {
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 15rem auto;
+}
+.website_form_body .row input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+  outline: none;
+  color: white;
+}
+.website_form_footer {
+  text-align: right;
+}
+.website_form_footer button {
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 0, 0, 0.5);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.website_form_footer button:hover {
+  transform: scale(1.1);
 }
 
 .welcome_panel {

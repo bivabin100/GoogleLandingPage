@@ -13,7 +13,7 @@
         <input type="text" placeholder="...">
       </div>
     </div>
- 
+
     <div class="right_box">
       <div class="datetime_box noselect">
         <div class="date">
@@ -64,46 +64,37 @@
     <div class="left_box">
       <div class="website_shortcut">
         <div class="website_item">
-          <a href="https://facebook.com" target="_blank"><img src="img/ws/facebook.png" alt="icon"></a>
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span>Facebook</span>
-        </div>
-        <div class="website_item">
-          <a href="https://google.com" target="_blank"><img src="img/ws/google.png" alt="icon"></a>
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span>Google</span>
-        </div>
-        <div class="website_item">
-          <a href="https://instagram.com" target="_blank"><img src="img/ws/instagram.png" alt="icon"></a>
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span>Instagram</span>
-        </div>
-        <div class="website_item">
-          <a href="https://youtube.com" target="_blank"><img src="img/ws/youtube.png" alt="icon"></a>
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span>YouTube</span>
-        </div>
-        <div class="website_item">
-          <a href="https://bit.ly/tiengruoi" target="_blank"><img src="img/ws/90p.png" alt="icon"></a>
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span>90Phut</span>
-        </div>
-        <div class="website_item">
-          <a href="https://nimo.tv" target="_blank"><img src="img/ws/nimo.png" alt="icon"></a>
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span>Nimo</span>
-        </div>
-        <div class="website_item">
-          <a href="https://shopee.com" target="_blank"><img src="img/ws/shopee.png" alt="icon"></a>
-          <i class="fa-solid fa-circle-xmark"></i>
-          <span>Shopee</span>
-        </div>
-        <div class="website_item">
           <a href="https://lazada.vn" target="_blank"><img src="img/ws/lazada.png" alt="icon"></a>
-          <i class="fa-solid fa-circle-xmark"></i>
+          <i class="fa-solid fa-circle-xmark" id="wsdelete"></i>
           <span>Lazada</span>
         </div>
+        <div class="website_item" id="addmore">
+          <a href="#"><img src="img/ws/plus.png" alt="icon"></a>
+          <span>Add more</span>
+        </div>
       </div>
+    </div>
+
+    <div class="website_form hide">
+      <form class="website-add" action="index.html">
+        <div class="website_form_header">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <br>
+        <div class="website_form_body">
+          <div class="row">
+            <span>Your website's name:</span>
+            <input type="text" id="websiteName" name="websiteName" value="">
+          </div>
+          <div class="row">
+            <span>Your website's address:</span>
+            <input type="text" id="websiteAddress" name="websiteAddress" value="">
+          </div>
+        </div>
+        <div class="website_form_footer">
+            <button type="button" id="submit">Add</button>
+        </div>
+      </form>
     </div>
 
     <div class="welcome_panel noselect">
@@ -116,5 +107,5 @@
     </div>
   </body>
 
-  <script src="app.js"></script>
+  <script async src="app.js"></script>
 </html>

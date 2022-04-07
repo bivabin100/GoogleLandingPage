@@ -1,21 +1,63 @@
 window.addEventListener("load", function() {
   userNaming();
   initClock();
-  document.querySelector('.city_search').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-    updateWeather();
-    }
-  });
   if (localStorage.getItem("city")) {
     displayWeather(localStorage.getItem("city"));
   }
-  GoogleSearch();
   TypingEffect();
-  document.querySelector('.right_bot_box i').addEventListener('click', function() {
-    localStorage.clear();
-    location.reload();
-  });
-});
+  initWebsiteShortcut();
+
+})
+
+//Thay đổi thời tiết
+document.querySelector('.city_search').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+  updateWeather();
+  }
+})
+//Xóa sạch dữ liệu
+document.querySelector('.right_bot_box i').addEventListener('click', function() {
+  localStorage.clear();
+  location.reload();
+})
+//Google
+GoogleSearch()
+//Mở box thêm website shortcut
+document.querySelector('#addmore').addEventListener('click', function() {
+  document.querySelector('.website_form').classList.remove('hide');
+})
+//Đóng box them website shortcut
+var wsCloseIcon = document.querySelector('.website_form_header i');
+wsCloseIcon.addEventListener('click', function() {
+  document.querySelector('.website_form').classList.add('hide');
+})
+document.querySelector('.website_form').addEventListener('click', function(e) {
+  if (e.target === e.currentTarget) {
+    document.querySelector('.website_form').classList.add('hide');
+  }
+})
+//
+//Xóa website website_shortcut
+
+
+
+document.querySelector('.website_form_footer button').addEventListener('click', function() {
+  addWebsiteShortcut();
+  document.querySelector('#websiteName').value = '';
+  document.querySelector('#websiteAddress').value = '';
+  document.querySelector('.website_form').classList.add('hide');
+})
+document.querySelector('#websiteAddress').addEventListener('keypress', function(e) {
+  if (e.code === 'Enter') {
+    ddWebsiteShortcut();
+    document.querySelector('#websiteName').value = '';
+    document.querySelector('#websiteAddress').value = '';
+    document.querySelector('.website_form').classList.add('hide');
+  }
+})
+
+
+
 
 function userNaming() {
   var modal = document.querySelector('.modal');
@@ -136,4 +178,46 @@ function TypingEffect() {
     }
   }
   intervalValue = setInterval(Type, 75);
+}
+function addWebsiteShortcut() {
+  var websiteName = document.querySelector('#websiteName').value;
+  var websiteAddress = document.querySelector('#websiteAddress').value;
+  websiteAddress = "https://".concat(websiteAddress);
+  var websiteArray = JSON.parse(localStorage.getItem('websiteArray'));
+  if (!websiteArray) {
+    websiteArray =[];
+  }
+  websiteArray.push([websiteName,websiteAddress]);
+  localStorage.setItem('websiteArray', JSON.stringify(websiteArray));
+  displayAWebsiteShortcut(websiteArray.length-1);
+}
+function displayAWebsiteShortcut(i, websiteShortcutList) {
+  var websiteArray = JSON.parse(localStorage.getItem('websiteArray'));
+  var websiteShortcutList = document.querySelector(".website_shortcut");
+  var div = document.createElement("div");
+  div.className = "website_item";
+  var img = document.createElement('img');
+  img.src = `img/ws/${websiteArray[i][0]}.png`;
+  img.onload = function() {
+    var imgLink = `img/ws/${websiteArray[i][0]}.png`;
+    div.innerHTML = `<a href="${websiteArray[i][1]}" target="_blank"><img src="${imgLink}" alt="icon"></a><span>${websiteArray[i][0]}</span><i class="fa-solid fa-circle-xmark" id="wsdelete"></i>`;
+    websiteShortcutList.insertBefore(div, websiteShortcutList.children[i])
+  }
+  img.onerror = function() {
+    var imgLink = `img/ws/${websiteArray[i][0].charAt(0).toLowerCase()}.png`;
+    div.innerHTML = `<a href="${websiteArray[i][1]}" target="_blank"><img src="${imgLink}" alt="icon"></a><span>${websiteArray[i][0]}</span><i class="fa-solid fa-circle-xmark" id="wsdelete"></i>`;
+    websiteShortcutList.insertBefore(div, websiteShortcutList.children[i])
+  }
+}
+function initWebsiteShortcut() {
+  var websiteArray = JSON.parse(localStorage.getItem('websiteArray'));
+  var websiteShortcutList = document.getElementById("website_shortcut");
+  if (!websiteArray) {
+    websiteArray = [];
+  }
+  if (websiteArray.length != 0) {
+    for (var i = 0; i < websiteArray.length; i++) {
+      displayAWebsiteShortcut(i);
+    }
+  }
 }
