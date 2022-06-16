@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="modal hidden">
+      <div class="modal_inner hidden" id="websiteShortcut">
+        <div class="modal_header">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="modal_body">
+          <table>
+            <tr>
+              <td><label>Website Name</label></td>
+              <td><input type="text" value="" id="websiteName" placeholder="Google"></td>
+            </tr>
+            <tr>
+              <td><label>Website Address</label></td>
+              <td><input type="text" value="" id="websiteAddress" placeholder="google.com"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal_footer">
+          <button type="button">Add</button>
+        </div>
+      </div>
+      <div class="modal_inner hidden" id="userName">
+        <div class="modal_body">
+          <table>
+            <tr>
+              <td><label for="yourName">Your Name is...</label></td>
+              <td><input type="text" id="yourName"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="modal_inner hidden" id="chooseDataDelete">
+        <div class="modal_header">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="modal_body">
+          <h1><i>Choose which data you wanna delete</i></h1>
+          <input type="checkbox" id="delete1">
+          <label for="delete1">Website Shortcut</label><br>
+          <input type="checkbox" id="delete2">
+          <label for="delete2">Username</label><br>
+          <input type="checkbox" id="delete3">
+          <label for="delete3">City</label><br>
+        </div>
+        <div class="modal_footer">
+          <button type="button">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="clock_container">
+      <div class="timer_container">
+        <div class="date_container">
+          <span id="datename"></span>
+          <span id="date"></span>
+          <span>-</span>
+          <span id="month"></span>
+          <span>-</span>
+          <span id="year"></span>
+        </div>
+        <div class="time_container">
+          <span id="hour"></span>
+          <span>:</span>
+          <span id="minute"></span>
+          <span>:</span>
+          <span id="second"></span>
+          <span id="period"></span>
+        </div>
+      </div>
+      <div class="weather_container">
+        <div class="weather_display_container">
+          <div class="temperature">
+            <span id="temp"></span>
+            <span>o</span>
+            <span>C</span>
+          </div>
+          <div class="weather_status">
+            <span></span>
+          </div>
+          <div class="description_container">
+            <div class="description_item">
+              <i class="fa-solid fa-wind"></i>
+              <span id="wind"></span>
+            </div>
+            <div class="description_item">
+              <i class="fa-solid fa-droplet"></i>
+              <span id="humidity"></span>
+            </div>
+            <div class="description_item">
+              <i class="fa-solid fa-person-breastfeeding"></i>
+              <span id="tempFeel"></span>
+            </div>
+          </div>
+          <div class="city_name">
+            <span></span>
+          </div>
+        </div>
+        <div class="city_input">
+          <input type="text" value="" placeholder="Input your city...">
+        </div>
+      </div>
+    </div>
+    <div class="website_shortcut_container">
+      <div class="website_shortcut_item" id="addwebsiteshortuct">
+        <a href="#"><img src="img/plus.png"></a>
+        <span>Add More</span>
+      </div>
+    </div>
+    <div class="welcome_panel_container">
+      <div class="name"></div>
+      <div class="cursor"></div>
+    </div>
+    <div class="delete_data_container">
+      <i class="fa-solid fa-trash"></i>
+      <span>Delete All of User Data</span>
+    </div>
+  </body>
+  <script async src="app.js"></script>
+</html>
