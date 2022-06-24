@@ -9,6 +9,7 @@ window.addEventListener("load", function() {
   initWebsiteShorcut();
   userNaming();
   typingEffect();
+  initQuote();
 })
 //Update weather_status
 document.querySelector('.city_input input').addEventListener('keypress', function(e) {
@@ -229,4 +230,19 @@ function createAWebsiteShortcut(i) {
     localStorage.setItem('wsLocalStorageArray', JSON.stringify(wsLocalStorageArray));
     location.reload();
   })
+}
+//Function generate random code
+async function initQuote () {
+  let quoteAPI = "https://type.fit/api/quotes";
+  let data = await fetch(quoteAPI).then(res=> res.json());
+  console.log(data);
+  let quoteIndex = Math.floor(Math.random() * data.length);
+  console.log(quoteIndex);
+  console.log(data[quoteIndex]);
+  document.querySelector('.quote_sentence q').innerText = data[quoteIndex].text;
+  if (data[quoteIndex].author) {
+    document.querySelector('.quote_sentence p i').innerText = data[quoteIndex].author;
+  } else {
+    document.querySelector('.quote_sentence p i').innerText = "Noname";
+  }
 }

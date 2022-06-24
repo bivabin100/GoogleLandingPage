@@ -380,3 +380,28 @@ body {
   opacity: 90%;
   visibility: visible;
 }
+.quote_container {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.quote_sentence {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  flex-direction: column;
+  margin: 0 20px;
+  width: 100%;
+}
+.quote_sentence q {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+.quote_sentence p {
+  font-size: 16px;
+  margin: 0 5px;
+  color: rgba(255, 255, 255, 0.8);
+}
