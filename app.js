@@ -107,7 +107,7 @@ function userNaming() {
       }
     })
     document.querySelector('#userName button').addEventListener('click', function() {
-      var userName = this.value;
+      var userName = document.querySelector('#yourName').value;
       localStorage.setItem("userName", userName);
       document.querySelector('#userName').classList.add("hidden");
       document.querySelector('.modal').classList.add("hidden");
