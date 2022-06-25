@@ -334,27 +334,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
-.delete_data_container span {
-  position: absolute;
-  top: 10px;
-  left: -2px;
-  transform: translate(-100%, -100%);
-  width: auto;
-  white-space: nowrap;
-  background: var(--color1);
-  color: white;
-  padding: 2px 3px;
-  font-size: 12px;
-  font-weight: 400;
-  border-radius: 7px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s;
-}
-.delete_data_container:hover span {
-  opacity: 90%;
-  visibility: visible;
-}
+
 
 .quote_sentence {
   width: 100%;
@@ -419,6 +399,27 @@ body {
     right: 10px;
     bottom: 10px;
   }
+  .delete_data_container span {
+    position: absolute;
+    top: 10px;
+    left: -2px;
+    transform: translate(-100%, -100%);
+    width: auto;
+    white-space: nowrap;
+    background: var(--color1);
+    color: white;
+    padding: 2px 3px;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  .delete_data_container:hover span {
+    opacity: 90%;
+    visibility: visible;
+  }
 }
 @media screen and (max-width: 991px) {
   .clock_container {
@@ -466,6 +467,7 @@ body {
   }
   .quote_sentence {
     position: relative;
+    margin-top: 20px;;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -477,15 +479,18 @@ body {
     color: rgba(255, 255, 255, 0.5);
   }
   .quote_sentence p {
-
     font-size: 16px;
     color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
   }
   .delete_data_container {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px 10px;
+    position: fixed;
+    bottom: 0;
+    width: 98%;
+    text-align: right;
+  }
+  .delete_data_container span {
+    display: none;
   }
 }
 /* For Modal  */
