@@ -458,8 +458,11 @@ body {
 
   }
   .website_shortcut_item {
+    width: 70px;
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .quote_container {
     position: relative;
